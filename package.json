@@ -1,12 +1,13 @@
 {
-  "name": "amp",
+  "name": "xendke-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --hot --mode development",
-    "build": "webpack --mode production",
-    "buildd": "webpack --mode development"
+    "build": "npm run test && webpack --mode production",
+    "build-dev": "webpack --mode development",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -18,13 +19,16 @@
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^25.1.0",
     "node-sass": "^4.13.1",
+    "react-test-renderer": "^16.12.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.40.2",
@@ -35,6 +39,15 @@
     "presets": [
       "@babel/preset-env",
       "@babel/preset-react"
+    ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss|less)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
     ]
   }
 }
