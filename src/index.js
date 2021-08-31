@@ -1,9 +1,9 @@
-import "@babel/polyfill";
+import '@babel/polyfill'
 
-import React from "react";
-import ReactDOM from "react-dom";
-import App from './App/App.jsx';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App/App.jsx'
 
-import './styles.scss';
+import './styles.scss'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'))
