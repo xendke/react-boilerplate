@@ -13,7 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/polyfill": "^7.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -21,6 +20,8 @@
     "@babel/core": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
     "babel-jest": "^27.1.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^6.2.0",
@@ -42,11 +43,12 @@
     ]
   },
   "jest": {
+    "testEnvironment": "jsdom",
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|scss|less)$": "<rootDir>/__mocks__/styleMock.js"
     },
-    "setupFiles": [
+    "setupFilesAfterEnv": [
       "<rootDir>/jest.setup.js"
     ]
   }
